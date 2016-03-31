@@ -1,0 +1,40 @@
+PODS:
+  - Bolts (1.7.0):
+    - Bolts/AppLinks (= 1.7.0)
+    - Bolts/Tasks (= 1.7.0)
+  - Bolts/AppLinks (1.7.0):
+    - Bolts/Tasks
+  - Bolts/Tasks (1.7.0)
+  - FBSDKCoreKit (4.10.1):
+    - Bolts (~> 1.5)
+  - FBSDKLoginKit (4.10.1):
+    - FBSDKCoreKit
+  - GoogleMaps (1.13.0)
+  - Kingfisher (2.2.0)
+  - SWRevealViewController (2.4.0)
+
+DEPENDENCIES:
+  - FBSDKCoreKit (~> 4.10)
+  - FBSDKLoginKit (~> 4.10)
+  - GoogleMaps (~> 1.13)
+  - Kingfisher (~> 2.2)
+  - SWRevealViewController (from `https://github.com/John-Lluch/SWRevealViewController.git`)
+
+EXTERNAL SOURCES:
+  SWRevealViewController:
+    :git: https://github.com/John-Lluch/SWRevealViewController.git
+
+CHECKOUT OPTIONS:
+  SWRevealViewController:
+    :commit: bb4a110989d67a5fc5f5c533cacc92f6cb02f5e2
+    :git: https://github.com/John-Lluch/SWRevealViewController.git
+
+SPEC CHECKSUMS:
+  Bolts: a0058fa3b331c5a1e4402d534f2dae36dbff31e4
+  FBSDKCoreKit: d2aaed5e9ab7d8d6301c533376a1fbff1cf3deb5
+  FBSDKLoginKit: 699ff169080e3072de4b9b0faca90bf23dc36deb
+  GoogleMaps: 7a6caeb8336d7cb42982e969fc9b1b20a889fe79
+  Kingfisher: 350869ed88d6451803b390475d977abdd9f0a357
+  SWRevealViewController: b653f339865208c97be99a24876545f5be0cc4bb
+
+COCOAPODS: 0.39.0
