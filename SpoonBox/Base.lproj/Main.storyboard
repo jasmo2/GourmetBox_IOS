@@ -56,15 +56,6 @@
                                     <segue destination="hWE-S9-cEe" kind="presentation" id="t7r-qk-95h"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wbh-rz-W8r">
-                                <rect key="frame" x="0.0" y="64" width="600" height="43"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="43" id="EeK-qY-HE5"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <color key="highlightedColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                            </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mIJ-q6-dao" customClass="GMSMapView">
                                 <rect key="frame" x="0.0" y="107" width="600" height="409"/>
                                 <subviews>
@@ -82,17 +73,26 @@
                                     <constraint firstItem="Q23-ne-9Ad" firstAttribute="centerY" secondItem="mIJ-q6-dao" secondAttribute="centerY" id="cx4-T9-7jZ"/>
                                 </constraints>
                             </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wbh-rz-W8r">
+                                <rect key="frame" x="0.0" y="64" width="600" height="43"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="43" id="EeK-qY-HE5"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="highlightedColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="mIJ-q6-dao" secondAttribute="bottom" constant="84" id="1yV-Gq-hAG"/>
                             <constraint firstItem="Wbh-rz-W8r" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="6xQ-fo-XVt"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Wbh-rz-W8r" secondAttribute="trailing" id="AeW-ye-kK1"/>
+                            <constraint firstItem="Wbh-rz-W8r" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="CkP-XZ-5fz"/>
                             <constraint firstItem="mIJ-q6-dao" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-20" id="H46-it-gJl"/>
-                            <constraint firstItem="Wbh-rz-W8r" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-20" id="IRX-JL-JQc"/>
                             <constraint firstItem="Wbh-rz-W8r" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="JfC-Ux-Rxb"/>
                             <constraint firstAttribute="trailingMargin" secondItem="mIJ-q6-dao" secondAttribute="trailing" constant="-20" id="VSx-Cq-Po9"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="qjD-G7-IU9" secondAttribute="bottom" constant="27" id="YsC-VG-ALT"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="Wbh-rz-W8r" secondAttribute="trailing" constant="-20" id="abL-cg-jNl"/>
                             <constraint firstItem="mIJ-q6-dao" firstAttribute="top" secondItem="Wbh-rz-W8r" secondAttribute="bottom" id="ceX-Em-zT7"/>
                             <constraint firstItem="qjD-G7-IU9" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="5" id="dZt-iY-wKw"/>
                             <constraint firstItem="qjD-G7-IU9" firstAttribute="top" secondItem="mIJ-q6-dao" secondAttribute="bottom" constant="27" id="fD8-Cg-Oqz"/>
@@ -107,6 +107,7 @@
                     </view>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <connections>
+                        <outlet property="addressLabel" destination="Wbh-rz-W8r" id="qWj-db-1Tc"/>
                         <outlet property="mapView" destination="mIJ-q6-dao" id="CfQ-6q-bUF"/>
                     </connections>
                 </viewController>

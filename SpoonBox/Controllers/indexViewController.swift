@@ -9,14 +9,18 @@
 import UIKit
 import GoogleMaps
 
-class IndexViewController: UIViewController , CLLocationManagerDelegate{
+class IndexViewController: UIViewController , CLLocationManagerDelegate, GMSMapViewDelegate{
 
     @IBOutlet weak var mapView: GMSMapView!
+    
+    @IBOutlet weak var addressLabel: UILabel!
+    
+    
     let locationManager = CLLocationManager()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-//        mapView.delegate = self as! GMSMapViewDelegate
+        mapView.delegate = self
         locationManager.delegate = self
         locationManager.requestWhenInUseAuthorization()
         // Do any additional setup after loading the view, typically from a nib.
@@ -24,6 +28,7 @@ class IndexViewController: UIViewController , CLLocationManagerDelegate{
     
     override func viewDidAppear(animated: Bool) {
 //        self.mapView.addSubview()
+
         
     }
     override func didReceiveMemoryWarning() {
@@ -31,11 +36,33 @@ class IndexViewController: UIViewController , CLLocationManagerDelegate{
         // Dispose of any resources that can be recreated.
     }
 
+    /// Custom Functions
+    
+    func reverseGeocodeCoordinate(coordinate: CLLocationCoordinate2D) {
+        
+        // 1
+        let geocoder = GMSGeocoder()
+        
+        // 2
+        geocoder.reverseGeocodeCoordinate(coordinate) { response, error in
+            if let address = response?.firstResult() {
+                
+                // 3
+                let lines: [String] = address.lines as [String]!
+                self.addressLabel.text = lines.joinWithSeparator("\n")
+                
+                // 4
+                UIView.animateWithDuration(0.25) {
+                    self.view.layoutIfNeeded()
+                }
+            }
+        }
+    }
     
     ///      Delegate Functions
     
     func locationManager(manager: CLLocationManager, didChangeAuthorizationStatus status: CLAuthorizationStatus) {
-    // 3
+    // 3
         if status == .AuthorizedWhenInUse {
         
             // 4
@@ -50,14 +77,18 @@ class IndexViewController: UIViewController , CLLocationManagerDelegate{
     // 6
     func locationManager(manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         if let location = locations.first {
-            
             // 7
+            
             mapView.camera = GMSCameraPosition(target: location.coordinate, zoom: 15, bearing: 0, viewingAngle: 0)
             
             // 8
+            print (location)
             locationManager.stopUpdatingLocation()
         }
         
+    }
+    func mapView(mapView: GMSMapView, idleAtCameraPosition position: GMSCameraPosition) {
+        reverseGeocodeCoordinate(position.target)
     }
 
 }
