@@ -16,11 +16,16 @@ class IndexViewController: UIViewController , CLLocationManagerDelegate{
     
     override func viewDidLoad() {
         super.viewDidLoad()
+//        mapView.delegate = self as! GMSMapViewDelegate
         locationManager.delegate = self
         locationManager.requestWhenInUseAuthorization()
         // Do any additional setup after loading the view, typically from a nib.
     }
-
+    
+    override func viewDidAppear(animated: Bool) {
+//        self.mapView.addSubview()
+        
+    }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
