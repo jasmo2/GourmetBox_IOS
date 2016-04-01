@@ -1,13 +1,33 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6211" systemVersion="14A298i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6204"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
+        <scene sceneID="ElQ-cy-uPJ">
+            <objects>
+                <viewController id="wsv-n0-rLc" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="U0H-uv-w5T"/>
+                        <viewControllerLayoutGuide type="bottom" id="CiB-yy-kZL"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="TL9-gk-xqS">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="EPD-nh-SCO" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="245" y="-408"/>
+        </scene>
+        <!--Index View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="IndexViewController" customModule="SpoonBox" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -15,11 +35,70 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qjD-G7-IU9" customClass="RoundButton" customModule="SpoonBox" customModuleProvider="target">
+                                <rect key="frame" x="25" y="543" width="560" height="30"/>
+                                <color key="backgroundColor" white="0.88317228619999999" alpha="1" colorSpace="calibratedWhite"/>
+                                <inset key="contentEdgeInsets" minX="1" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                <state key="normal" title="Continuar"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                        <color key="value" red="0.24164643883705139" green="0.074493452906608582" blue="0.88119709491729736" alpha="1" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="9"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                        <real key="value" value="2"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </button>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mIJ-q6-dao" customClass="GMSMapView">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="516"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_me" highlightedImage="icon_me" translatesAutoresizingMaskIntoConstraints="NO" id="Q23-ne-9Ad">
+                                        <rect key="frame" x="287" y="237" width="27" height="43"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="43" id="jzr-c0-x2w"/>
+                                            <constraint firstAttribute="width" constant="27" id="pXh-az-g1Z"/>
+                                        </constraints>
+                                    </imageView>
+                                </subviews>
+                                <color key="backgroundColor" red="0.88268148899078369" green="0.88265502452850342" blue="0.88267004489898682" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstItem="Q23-ne-9Ad" firstAttribute="centerX" secondItem="mIJ-q6-dao" secondAttribute="centerX" id="XXm-dh-s2V"/>
+                                    <constraint firstItem="Q23-ne-9Ad" firstAttribute="centerY" secondItem="mIJ-q6-dao" secondAttribute="centerY" id="cx4-T9-7jZ"/>
+                                </constraints>
+                            </view>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="mIJ-q6-dao" secondAttribute="bottom" constant="84" id="1yV-Gq-hAG"/>
+                            <constraint firstItem="mIJ-q6-dao" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-20" id="H46-it-gJl"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="mIJ-q6-dao" secondAttribute="trailing" constant="-20" id="VSx-Cq-Po9"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="qjD-G7-IU9" secondAttribute="bottom" constant="27" id="YsC-VG-ALT"/>
+                            <constraint firstItem="qjD-G7-IU9" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="5" id="dZt-iY-wKw"/>
+                            <constraint firstItem="qjD-G7-IU9" firstAttribute="top" secondItem="mIJ-q6-dao" secondAttribute="bottom" constant="27" id="fD8-Cg-Oqz"/>
+                            <constraint firstItem="qjD-G7-IU9" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="fdD-Rk-6yH"/>
+                            <constraint firstItem="qjD-G7-IU9" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" constant="5" id="sRF-RV-AZ4"/>
+                            <constraint firstItem="mIJ-q6-dao" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="topMargin" id="tZo-Tn-o7J"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="fdD-Rk-6yH"/>
+                            </mask>
+                        </variation>
                     </view>
+                    <connections>
+                        <outlet property="mapView" destination="mIJ-q6-dao" id="CfQ-6q-bUF"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="245" y="337"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="icon_me" width="30" height="55"/>
+    </resources>
 </document>
