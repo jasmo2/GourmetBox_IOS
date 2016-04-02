@@ -27,19 +27,8 @@ class IndexViewController: UIViewController , CLLocationManagerDelegate, GMSMapV
     }
 
     override func viewDidAppear(animated: Bool) {
-        let image = UIImage(named: "icon_me")
-        let iconMeImage = UIImageView(image: image!)
-
-        iconMeImage.frame = CGRect(x: 0, y: 0, width: 18 , height: 33)
-
-        self.mapView!.addSubview(iconMeImage)
-        iconMeImage.translatesAutoresizingMaskIntoConstraints = false;
-
-        let horizontalConstraint = NSLayoutConstraint(item: iconMeImage, attribute: NSLayoutAttribute.CenterX, relatedBy: NSLayoutRelation.Equal, toItem: view, attribute: NSLayoutAttribute.CenterX, multiplier: 1, constant: 0)
-        view.addConstraint(horizontalConstraint)
-
-        let verticalConstraint = NSLayoutConstraint(item: iconMeImage, attribute: NSLayoutAttribute.CenterY, relatedBy: NSLayoutRelation.Equal, toItem: view, attribute: NSLayoutAttribute.CenterY, multiplier: 0.88, constant: 0)
-        view.addConstraint(verticalConstraint)
+        IconMe(mapView: mapView, view: view)
+        
 
     }
     override func didReceiveMemoryWarning() {
