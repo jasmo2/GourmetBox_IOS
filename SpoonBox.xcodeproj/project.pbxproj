@@ -15,6 +15,7 @@
 		9F37528C1CADCA390047FC73 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9F37528B1CADCA390047FC73 /* Assets.xcassets */; };
 		9F37528F1CADCA390047FC73 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9F37528D1CADCA390047FC73 /* LaunchScreen.storyboard */; };
 		9F7458E21CAF68B000CBC267 /* iconeMe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F7458E11CAF68B000CBC267 /* iconeMe.swift */; };
+		9F7458E41CB01D0000CBC267 /* ChipsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F7458E31CB01D0000CBC267 /* ChipsTableViewController.swift */; };
 		9F8962731CAF1EAC008E65E2 /* backTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F8962721CAF1EAC008E65E2 /* backTableViewController.swift */; };
 		E214A8F9B6CB7D67F23A4942 /* Pods_SpoonBox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5892FBB1D4F09C17BF8FF48D /* Pods_SpoonBox.framework */; };
 /* End PBXBuildFile section */
@@ -32,6 +33,7 @@
 		9F37528E1CADCA390047FC73 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		9F3752901CADCA390047FC73 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9F7458E11CAF68B000CBC267 /* iconeMe.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = iconeMe.swift; path = Views/iconeMe.swift; sourceTree = "<group>"; };
+		9F7458E31CB01D0000CBC267 /* ChipsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ChipsTableViewController.swift; path = Controllers/ChipsTableViewController.swift; sourceTree = "<group>"; };
 		9F8962721CAF1EAC008E65E2 /* backTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = backTableViewController.swift; path = Controllers/backTableViewController.swift; sourceTree = "<group>"; };
 		EE9ABFAF833918D29ECA82E6 /* Pods-SpoonBox.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SpoonBox.release.xcconfig"; path = "Pods/Target Support Files/Pods-SpoonBox/Pods-SpoonBox.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -62,6 +64,7 @@
 			children = (
 				9F3752861CADCA390047FC73 /* indexViewController.swift */,
 				9F8962721CAF1EAC008E65E2 /* backTableViewController.swift */,
+				9F7458E31CB01D0000CBC267 /* ChipsTableViewController.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -253,6 +256,7 @@
 				9F7458E21CAF68B000CBC267 /* iconeMe.swift in Sources */,
 				9F2696F81CADE002009C8E0C /* roundButton.swift in Sources */,
 				9F3752851CADCA390047FC73 /* AppDelegate.swift in Sources */,
+				9F7458E41CB01D0000CBC267 /* ChipsTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
