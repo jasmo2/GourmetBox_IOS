@@ -27,10 +27,10 @@ class IndexViewController: UIViewController , CLLocationManagerDelegate, GMSMapV
     }
 
     override func viewDidAppear(animated: Bool) {
-        IconMe(mapView: mapView, view: view)
-        
-
+        let iconMe = IconMe(mapView: mapView, view: view)
+        iconMe.centerIcon()
     }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
