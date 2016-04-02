@@ -11,9 +11,8 @@
       "scale" : "3x"
     },
     {
-      "size" : "40x40",
       "idiom" : "iphone",
-      "filename" : "spoonbox.png",
+      "size" : "40x40",
       "scale" : "2x"
     },
     {
@@ -23,8 +22,9 @@
       "scale" : "3x"
     },
     {
-      "idiom" : "iphone",
       "size" : "60x60",
+      "idiom" : "iphone",
+      "filename" : "spoonbox.png",
       "scale" : "2x"
     },
     {
