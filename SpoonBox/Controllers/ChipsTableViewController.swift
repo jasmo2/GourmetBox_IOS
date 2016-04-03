@@ -8,6 +8,7 @@
 
 import UIKit
 import Fakery
+import SwiftyDropbox
 
 class ChipsTableViewController: UITableViewController {
 
@@ -23,7 +24,8 @@ class ChipsTableViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        print("viewDidLoad")
+//        Dropbox.authorizeFromController(self)
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
@@ -44,11 +46,12 @@ class ChipsTableViewController: UITableViewController {
 //    }
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        
+        print("numberOfRowsInSection")
         return chipsImages.count
     }
 
     override func viewWillAppear(animated: Bool) {
+        print("viewWillAppear")
         self.navigationController!.setToolbarHidden(false, animated: true)
     }
     

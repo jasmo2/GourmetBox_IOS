@@ -10,22 +10,40 @@ import UIKit
 import FBSDKCoreKit
 import FBSDKLoginKit
 import GoogleMaps
+import SwiftyDropbox
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
+    let keys = KeyList()
 
 
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
-       let keys = KeyList()
-       let googleMapsApiKey = keys.getKey("GoogleMapsKey")
+        
+        let googleMapsApiKey = keys.getKey("GoogleMapsKey")
+        let dropboxKey = keys.getKey("DropBoxKey")
 
         GMSServices.provideAPIKey(googleMapsApiKey)
-
+        Dropbox.setupWithAppKey(dropboxKey)
         return true
+    }
+    
+    func application(application: UIApplication, openURL url: NSURL, options: [String : AnyObject]) -> Bool {
+        let dropboxAccessToken = keys.getKey("DropBoxAccessToken")
+        
+        if let authResult = Dropbox.handleRedirectURL(url) {
+            switch authResult {
+            case .Success(let token):
+                print("Success! User is logged into Dropbox with token: \(token)")
+            case .Error(let error, let description):
+                print("Error \(error): \(description)")
+            }
+        }
+        
+        return false
     }
 
     func applicationWillResignActive(application: UIApplication) {

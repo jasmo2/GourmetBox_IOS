@@ -197,7 +197,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cLW-Wf-VCY" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1687" y="989"/>
+            <point key="canvasLocation" x="1687" y="1109"/>
         </scene>
         <!--Chips Table View Controller-->
         <scene sceneID="lzd-D1-BPy">
@@ -270,7 +270,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QT4-aN-9KK" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2445" y="989"/>
+            <point key="canvasLocation" x="2391" y="1109"/>
         </scene>
     </scenes>
     <resources>
