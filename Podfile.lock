@@ -1,4 +1,5 @@
 PODS:
+  - Alamofire (3.3.0)
   - Bolts (1.7.0):
     - Bolts/AppLinks (= 1.7.0)
     - Bolts/Tasks (= 1.7.0)
@@ -13,6 +14,8 @@ PODS:
     - FBSDKCoreKit
   - GoogleMaps (1.13.0)
   - Kingfisher (2.2.0)
+  - SwiftyDropbox (3.0.0):
+    - Alamofire (~> 3.1)
   - SwiftyJSON (2.3.2)
   - SWRevealViewController (2.4.0)
 
@@ -22,6 +25,7 @@ DEPENDENCIES:
   - FBSDKLoginKit (~> 4.10)
   - GoogleMaps (~> 1.13)
   - Kingfisher (~> 2.2)
+  - SwiftyDropbox (~> 3.0.0)
   - SWRevealViewController (from `https://github.com/John-Lluch/SWRevealViewController.git`)
 
 EXTERNAL SOURCES:
@@ -34,12 +38,14 @@ CHECKOUT OPTIONS:
     :git: https://github.com/John-Lluch/SWRevealViewController.git
 
 SPEC CHECKSUMS:
+  Alamofire: 9054db4a1b1ca9e363223183e01cea380159a27c
   Bolts: a0058fa3b331c5a1e4402d534f2dae36dbff31e4
   Fakery: a4121424cf731cacc04a5ff1735fcc6e3efc656d
   FBSDKCoreKit: d2aaed5e9ab7d8d6301c533376a1fbff1cf3deb5
   FBSDKLoginKit: 699ff169080e3072de4b9b0faca90bf23dc36deb
   GoogleMaps: 7a6caeb8336d7cb42982e969fc9b1b20a889fe79
   Kingfisher: 350869ed88d6451803b390475d977abdd9f0a357
+  SwiftyDropbox: e0d4aa3166082ec07ed942e94edb8c732b3376e4
   SwiftyJSON: 04ccea08915aa0109039157c7974cf0298da292a
   SWRevealViewController: b653f339865208c97be99a24876545f5be0cc4bb
 

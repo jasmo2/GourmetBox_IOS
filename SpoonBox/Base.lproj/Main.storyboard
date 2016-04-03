@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="ZM3-Hk-U7y">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
@@ -208,7 +208,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="SingleCell" selectionStyle="default" indentationWidth="10" reuseIdentifier="SingleCell" rowHeight="231" id="L8R-qQ-U52">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="SingleCell" selectionStyle="default" indentationWidth="10" reuseIdentifier="SingleCell" rowHeight="231" id="L8R-qQ-U52" customClass="SingleCellTableViewCell" customModule="SpoonBox" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="92" width="600" height="231"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" restorationIdentifier="singleCellController" tableViewCell="L8R-qQ-U52" id="ny9-JQ-5XL">
@@ -217,8 +217,7 @@
                                     <subviews>
                                         <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="lKd-6L-rlX">
                                             <rect key="frame" x="304" y="0.0" width="288" height="223"/>
-                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                            <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                            <mutableString key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</mutableString>
                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                             <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                         </textView>
@@ -226,6 +225,7 @@
                                             <rect key="frame" x="8" y="0.0" width="288" height="223"/>
                                         </imageView>
                                     </subviews>
+                                    <color key="backgroundColor" cocoaTouchSystemColor="lightTextColor"/>
                                     <constraints>
                                         <constraint firstItem="lKd-6L-rlX" firstAttribute="trailing" secondItem="ny9-JQ-5XL" secondAttribute="trailingMargin" id="1V5-xe-Mbp"/>
                                         <constraint firstItem="Jhd-bq-U1k" firstAttribute="leading" secondItem="ny9-JQ-5XL" secondAttribute="leadingMargin" id="6pq-B5-o08"/>
@@ -238,10 +238,14 @@
                                         <constraint firstItem="lKd-6L-rlX" firstAttribute="height" secondItem="Jhd-bq-U1k" secondAttribute="height" id="g5u-cR-Wq2"/>
                                     </constraints>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="cellImage" destination="Jhd-bq-U1k" id="mcb-T9-u42"/>
+                                    <outlet property="cellText" destination="lKd-6L-rlX" id="5KD-IS-57Q"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
-                            <outlet property="dataSource" destination="BjQ-lB-t9M" id="peb-CR-7hg"/>
+                            <outlet property="dataSource" destination="BjQ-lB-t9M" id="xHV-OH-Li7"/>
                             <outlet property="delegate" destination="BjQ-lB-t9M" id="OXW-dk-hQv"/>
                         </connections>
                     </tableView>
