@@ -8,7 +8,8 @@
 
 import UIKit
 import Fakery
-import SwiftyDropbox
+import Kingfisher
+
 
 class ChipsTableViewController: UITableViewController {
 
@@ -17,15 +18,20 @@ class ChipsTableViewController: UITableViewController {
     
     let faker = Faker(locale: "es")
     let chipsImages: [String] = [
-        "0_9b2ff_20b326f6_orig.png",
-        "PC1xxMeoWU.png",
-        "potato_PNG438.png"
+        "https://www.dropbox.com/s/7az7rn83tn9wc6i/0_9b300_6581c0db_orig.png?dl=0",
+        "https://www.dropbox.com/s/ypmm87pyemj66dn/kartosh01.png?dl=0",
+        "https://www.dropbox.com/s/o3ukwk9xkfd3515/0_9b2ff_20b326f6_orig.png?dl=0",
+        "https://www.dropbox.com/s/l2xoswm38bkwceh/potato_PNG435.png?dl=0",
+        "https://www.dropbox.com/s/u7ipuhwsia0ivuf/potato_PNG437.png?dl=0",
+        "https://www.dropbox.com/s/dty30ll85e8vk4w/potato_PNG438.png?dl=0"
     ]
 
     override func viewDidLoad() {
         super.viewDidLoad()
         print("viewDidLoad")
-//        Dropbox.authorizeFromController(self)
+
+        
+    
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
@@ -61,8 +67,20 @@ class ChipsTableViewController: UITableViewController {
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("SingleCell") as! SingleCellTableViewCell
-        let fLorem = faker.lorem.characters().stringByReplacingOccurrencesOfString("j", withString: "   ")
+        let fLorem = "\(faker.name.prefix()) \(faker.name.title()) \(faker.name.firstName()) \(faker.name.lastName())"
         cell.cellText.text = fLorem
+        
+        cell.cellImage.kf_showIndicatorWhenLoading = true
+        let URL = NSURL(string: "https://raw.githubusercontent.com/onevcat/Kingfisher/master/images/kingfisher-\(indexPath.row + 1).jpg")!
+        
+        cell.cellImage.kf_setImageWithURL(URL, placeholderImage: nil,
+                                              optionsInfo: [.Transition(ImageTransition.Fade(1))],
+                                              progressBlock: { receivedSize, totalSize in
+                                                print("\(indexPath.row + 1): \(receivedSize)/\(totalSize)")
+            },
+                                              completionHandler: { image, error, cacheType, imageURL in
+                                                print("\(indexPath.row + 1): Finished")
+        })
         
 
         return cell
