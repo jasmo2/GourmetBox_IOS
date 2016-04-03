@@ -6,6 +6,7 @@ use_frameworks!
 
 target 'SpoonBox' do
   pod 'Fakery', '~> 1.1.2'
+  pod 'SwiftyDropbox', '~> 3.0.0'
   pod 'FBSDKCoreKit', '~> 4.10'
   pod 'FBSDKLoginKit', '~> 4.10'
   pod 'GoogleMaps', '~>  1.13'
