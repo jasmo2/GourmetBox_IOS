@@ -10,7 +10,6 @@ import UIKit
 import FBSDKCoreKit
 import FBSDKLoginKit
 import GoogleMaps
-import SwiftyDropbox
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -24,27 +23,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
         
         let googleMapsApiKey = keys.getKey("GoogleMapsKey")
-        let dropboxKey = keys.getKey("DropBoxKey")
 
         GMSServices.provideAPIKey(googleMapsApiKey)
-        Dropbox.setupWithAppKey(dropboxKey)
         return true
     }
     
-    func application(application: UIApplication, openURL url: NSURL, options: [String : AnyObject]) -> Bool {
-        let dropboxAccessToken = keys.getKey("DropBoxAccessToken")
-        
-        if let authResult = Dropbox.handleRedirectURL(url) {
-            switch authResult {
-            case .Success(let token):
-                print("Success! User is logged into Dropbox with token: \(token)")
-            case .Error(let error, let description):
-                print("Error \(error): \(description)")
-            }
-        }
-        
-        return false
-    }
+   
 
     func applicationWillResignActive(application: UIApplication) {
         // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
