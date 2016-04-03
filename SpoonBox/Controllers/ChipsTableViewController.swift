@@ -7,12 +7,20 @@
 //
 
 import UIKit
+import Fakery
 
 class ChipsTableViewController: UITableViewController {
 
     @IBOutlet weak var cancelProcessButton: UIBarButtonItem!
    
     
+    let faker = Faker(locale: "es")
+    let chipsImages: [String] = [
+        "0_9b2ff_20b326f6_orig.png",
+        "PC1xxMeoWU.png",
+        "potato_PNG438.png"
+    ]
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -30,14 +38,14 @@ class ChipsTableViewController: UITableViewController {
 
     // MARK: - Table view data source
 
-    override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        return 0
-    }
+//    override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+//        // #warning Incomplete implementation, return the number of sections
+//        return 0
+//    }
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
-        return 0
+        
+        return chipsImages.count
     }
 
     override func viewWillAppear(animated: Bool) {
@@ -47,15 +55,16 @@ class ChipsTableViewController: UITableViewController {
     override func viewWillDisappear(animated: Bool) {
         self.navigationController!.setToolbarHidden(true, animated: true)
     }
-    /*
+    
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("reuseIdentifier", forIndexPath: indexPath)
-
-        // Configure the cell...
+        let cell = tableView.dequeueReusableCellWithIdentifier("SingleCell") as! SingleCellTableViewCell
+        let fLorem = faker.lorem.characters().stringByReplacingOccurrencesOfString("j", withString: "   ")
+        cell.cellText.text = fLorem
+        
 
         return cell
     }
-    */
+ 
 
     /*
     // Override to support conditional editing of the table view.
