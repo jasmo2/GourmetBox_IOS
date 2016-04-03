@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		9F2696F31CADD91F009C8E0C /* config.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9F2696F21CADD91F009C8E0C /* config.plist */; };
 		9F2696F81CADE002009C8E0C /* roundButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F2696F71CADE002009C8E0C /* roundButton.swift */; };
 		9F3752851CADCA390047FC73 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F3752841CADCA390047FC73 /* AppDelegate.swift */; };
 		9F3752871CADCA390047FC73 /* indexViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F3752861CADCA390047FC73 /* indexViewController.swift */; };
@@ -17,6 +16,7 @@
 		9F7458E21CAF68B000CBC267 /* iconeMe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F7458E11CAF68B000CBC267 /* iconeMe.swift */; };
 		9F7458E41CB01D0000CBC267 /* ChipsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F7458E31CB01D0000CBC267 /* ChipsTableViewController.swift */; };
 		9F7458E61CB06E4700CBC267 /* SingleCellTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F7458E51CB06E4600CBC267 /* SingleCellTableViewCell.swift */; };
+		9F7458E81CB0CDA500CBC267 /* keys.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9F7458E71CB0CDA500CBC267 /* keys.plist */; };
 		9F8962731CAF1EAC008E65E2 /* backTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F8962721CAF1EAC008E65E2 /* backTableViewController.swift */; };
 		E214A8F9B6CB7D67F23A4942 /* Pods_SpoonBox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5892FBB1D4F09C17BF8FF48D /* Pods_SpoonBox.framework */; };
 /* End PBXBuildFile section */
@@ -24,7 +24,6 @@
 /* Begin PBXFileReference section */
 		2C408E6A20B5C16B42822DA2 /* Pods-SpoonBox.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SpoonBox.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SpoonBox/Pods-SpoonBox.debug.xcconfig"; sourceTree = "<group>"; };
 		5892FBB1D4F09C17BF8FF48D /* Pods_SpoonBox.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SpoonBox.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		9F2696F21CADD91F009C8E0C /* config.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = config.plist; sourceTree = "<group>"; };
 		9F2696F71CADE002009C8E0C /* roundButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = roundButton.swift; path = Views/roundButton.swift; sourceTree = "<group>"; };
 		9F3752811CADCA390047FC73 /* SpoonBox.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SpoonBox.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9F3752841CADCA390047FC73 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -36,6 +35,7 @@
 		9F7458E11CAF68B000CBC267 /* iconeMe.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = iconeMe.swift; path = Views/iconeMe.swift; sourceTree = "<group>"; };
 		9F7458E31CB01D0000CBC267 /* ChipsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ChipsTableViewController.swift; path = Controllers/ChipsTableViewController.swift; sourceTree = "<group>"; };
 		9F7458E51CB06E4600CBC267 /* SingleCellTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SingleCellTableViewCell.swift; path = Models/SingleCellTableViewCell.swift; sourceTree = "<group>"; };
+		9F7458E71CB0CDA500CBC267 /* keys.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = keys.plist; sourceTree = "<group>"; };
 		9F8962721CAF1EAC008E65E2 /* backTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = backTableViewController.swift; path = Controllers/backTableViewController.swift; sourceTree = "<group>"; };
 		EE9ABFAF833918D29ECA82E6 /* Pods-SpoonBox.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SpoonBox.release.xcconfig"; path = "Pods/Target Support Files/Pods-SpoonBox/Pods-SpoonBox.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -107,8 +107,8 @@
 				9F3752881CADCA390047FC73 /* Main.storyboard */,
 				9F37528B1CADCA390047FC73 /* Assets.xcassets */,
 				9F37528D1CADCA390047FC73 /* LaunchScreen.storyboard */,
+				9F7458E71CB0CDA500CBC267 /* keys.plist */,
 				9F3752901CADCA390047FC73 /* Info.plist */,
-				9F2696F21CADD91F009C8E0C /* config.plist */,
 			);
 			path = SpoonBox;
 			sourceTree = "<group>";
@@ -192,7 +192,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9F2696F31CADD91F009C8E0C /* config.plist in Resources */,
+				9F7458E81CB0CDA500CBC267 /* keys.plist in Resources */,
 				9F37528F1CADCA390047FC73 /* LaunchScreen.storyboard in Resources */,
 				9F37528C1CADCA390047FC73 /* Assets.xcassets in Resources */,
 				9F37528A1CADCA390047FC73 /* Main.storyboard in Resources */,
